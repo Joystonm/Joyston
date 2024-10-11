@@ -6,6 +6,51 @@ var typed= new Typed(".text",{
     loop:true
 })
 
+
+
+// Initialize dark mode options
+const options = {
+    bottom: '64px', 
+    right: '32px',
+    time: '0.5s',
+    mixColor: '#fff', 
+    backgroundColor: '#000',
+    buttonColorDark: '#100f2c',
+    buttonColorLight: '#fff',
+    saveInCookies: true,
+    label: '🌓', 
+    autoMatchOsTheme: true
+  };
+  
+  // Create the dark mode instance
+  const darkmode = new Darkmode(options);
+  darkmode.showWidget();
+  
+  // Function to change text color based on the mode
+  const updateHomeTextColor = () => {
+    const homeElement = document.querySelector('.home');
+    if (darkmode.isActivated()) {
+      homeElement.style.color = '#000000'; // Set text color to white for dark mode
+    } else {
+      homeElement.style.color = '#ffff'; // Set text color to black for light mode
+    }
+  };
+  
+  // Ensure correct theme is applied on page load
+  window.onload = () => {
+    updateHomeTextColor();
+  };
+  
+  // Listen for mode changes and update text color accordingly
+  document.querySelector('.darkmode-toggle').addEventListener('click', () => {
+    setTimeout(updateHomeTextColor, 500); // Small delay for transition
+  });
+  
+  
+  
+   
+
+  
 // Progress bar animation
 const filled=document.querySelector(".progress-bar")
 function update(){
