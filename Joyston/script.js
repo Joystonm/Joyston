@@ -29,10 +29,22 @@ const options = {
   // Function to change text color based on the mode
   const updateHomeTextColor = () => {
     const homeElement = document.querySelector('.home');
+    const boxElements = document.querySelectorAll('.box'); 
+
     if (darkmode.isActivated()) {
       homeElement.style.color = '#000000'; // Set text color to white for dark mode
+      
+      boxElements.forEach(box => {
+        box.style.backgroundColor = '#000000'; // Set box background to white for dark mode
+        box.style.color = '#ffffff'; // Set box text color to black
+      });
     } else {
       homeElement.style.color = '#ffff'; // Set text color to black for light mode
+
+      boxElements.forEach(box => {
+        box.style.backgroundColor = '#ffffff'; // Set box background to white for dark mode
+        box.style.color = '#000000'; // Set box text color to black
+      });
     }
   };
   
