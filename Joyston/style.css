@@ -216,7 +216,8 @@ font-size: 30px;
 }
 /* PROJECT */
 .project{
-    height: 100vh;
+    /* margin-top: -20%; */
+    /* height: 100vh; */
 
 }
 .project_1 .container{
@@ -249,17 +250,37 @@ font-size: 30px;
     padding: 20px;
    
 }
-.icon img{ 
+/* .icon img{ 
     width: 80px;
     aspect-ratio: 3/2;
     object-fit: contain;
 mix-blend-mode: darken;
+} */
+
+.icon img {
+    width: 80px;
+    aspect-ratio: 3/2;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+    transition: transform 0.5s;
 }
 
-.icon img:hover{
+.icon img:hover {
+    animation: none; /* Cancel the slideIn animation */
+    transform: translateX(20px);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* .icon img:hover{
     transform: scale(1.1);
     mix-blend-mode: multiply;
-}
+} */
 /* Contact section */
 .contact{
     margin: 10px;
@@ -510,17 +531,21 @@ form input,form textarea{
         padding: 0;
            
     }
+    .home .content .name1{
+        margin-top: 10%;
+        padding-top: 15%;
+    }
     .home .content h3{
         font-weight: bolder;
-        font-size: 35px;
+        font-size: 30px;
     }
     .home .image img{
         display: none;
     }
     .project{
         /* height: 100vh; */
-        padding-top: 10px;
-        margin-top: 20px;
+        margin-top: 40%;
+        
     }
     .project h1{
         margin-top: 10px;
