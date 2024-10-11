@@ -9,56 +9,103 @@ var typed= new Typed(".text",{
 
 
 // Initialize dark mode options
-const options = {
-    bottom: '64px', 
-    right: '32px',
-    time: '0.5s',
-    mixColor: '#fff', 
-    backgroundColor: '#000',
-    buttonColorDark: '#100f2c',
-    buttonColorLight: '#fff',
-    saveInCookies: true,
-    label: '🌓', 
-    autoMatchOsTheme: true
-  };
+// const options = {
+//     bottom: '64px', 
+//     right: '32px',
+//     time: '0.5s',
+//     mixColor: '#fff', 
+//     backgroundColor: '#000',
+//     buttonColorDark: '#100f2c',
+//     buttonColorLight: '#fff',
+//     saveInCookies: true,
+//     label: '🌓', 
+//     autoMatchOsTheme: true
+//   };
   
-  // Create the dark mode instance
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
+//   // Create the dark mode instance
+//   const darkmode = new Darkmode(options);
+//   darkmode.showWidget();
   
-  // Function to change text color based on the mode
-  const updateHomeTextColor = () => {
-    const homeElement = document.querySelector('.home');
-    const boxElements = document.querySelectorAll('.box'); 
+//   // Function to change text color based on the mode
+//   const updateHomeTextColor = () => {
+//     const homeElement = document.querySelector('.home');
+//     const boxElements = document.querySelectorAll('.box'); 
 
-    if (darkmode.isActivated()) {
-      homeElement.style.color = '#000000'; // Set text color to white for dark mode
+//     if (darkmode.isActivated()) {
+//       homeElement.style.color = '#000000'; // Set text color to white for dark mode
       
-      boxElements.forEach(box => {
-        box.style.backgroundColor = '#000000'; // Set box background to white for dark mode
-        box.style.color = '#ffffff'; // Set box text color to black
-      });
-    } else {
-      homeElement.style.color = '#ffff'; // Set text color to black for light mode
+//       boxElements.forEach(box => {
+//         box.style.backgroundColor = '#000000'; // Set box background to white for dark mode
+//         box.style.color = '#ffffff'; // Set box text color to black
+//       });
+//     } else {
+//       homeElement.style.color = '#ffff'; // Set text color to black for light mode
 
-      boxElements.forEach(box => {
-        box.style.backgroundColor = '#ffffff'; // Set box background to white for dark mode
-        box.style.color = '#000000'; // Set box text color to black
-      });
-    }
-  };
+//       boxElements.forEach(box => {
+//         box.style.backgroundColor = '#ffffff'; // Set box background to white for dark mode
+//         box.style.color = '#000000'; // Set box text color to black
+//       });
+//     }
+//   };
   
-  // Ensure correct theme is applied on page load
-  window.onload = () => {
-    updateHomeTextColor();
-  };
+//   // Ensure correct theme is applied on page load
+//   window.onload = () => {
+//     updateHomeTextColor();
+//   };
   
-  // Listen for mode changes and update text color accordingly
-  document.querySelector('.darkmode-toggle').addEventListener('click', () => {
-    setTimeout(updateHomeTextColor, 500); // Small delay for transition
-  });
+//   // Listen for mode changes and update text color accordingly
+//   document.querySelector('.darkmode-toggle').addEventListener('click', () => {
+//     setTimeout(updateHomeTextColor, 500); // Small delay for transition
+//   });
   
-  
+const options = {
+  bottom: '64px', 
+  right: '32px',
+  time: '0.5s',
+  mixColor: '#fff', 
+  backgroundColor: '#000',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓', 
+  autoMatchOsTheme: true
+};
+
+// Create the dark mode instance
+const darkmode = new Darkmode(options);
+
+// Function to change text color based on the mode
+const updateHomeTextColor = () => {
+  const homeElement = document.querySelector('.home');
+  const boxElements = document.querySelectorAll('.box'); 
+
+  if (darkmode.isActivated()) {
+    homeElement.style.color = '#000000'; // Set text color to black for dark mode
+    
+    boxElements.forEach(box => {
+      box.style.backgroundColor = '#000000'; // Set box background to black for dark mode
+      box.style.color = '#ffffff'; // Set box text color to white
+    });
+  } else {
+    homeElement.style.color = '#ffffff'; // Set text color to white for light mode
+
+    boxElements.forEach(box => {
+      box.style.backgroundColor = '#ffffff'; // Set box background to white for light mode
+      box.style.color = '#000000'; // Set box text color to black
+    });
+  }
+};
+
+// Ensure correct theme is applied on page load
+window.onload = () => {
+  updateHomeTextColor();
+};
+
+// Listen for mode changes and update text color accordingly
+document.getElementById('toggle-darkmode').addEventListener('click', () => {
+  darkmode.toggle(); // Toggle the dark mode
+  setTimeout(updateHomeTextColor, 500); // Small delay for transition
+});
   
    
 
