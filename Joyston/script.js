@@ -6,58 +6,23 @@ var typed= new Typed(".text",{
     loop:true
 })
 
+// loader
+window.addEventListener('load', function() {
+  // Delay the hiding of the loader for 3 seconds
+  setTimeout(function() {
+      document.getElementById('loader-container').classList.add('hidden');
+  }, 3000); // 3000ms = 3 seconds
+});
+
+window.addEventListener('beforeunload', function() {
+  // Show the loader again when the page is refreshed
+  document.getElementById('loader-container').classList.remove('hidden');
+});
 
 
-// Initialize dark mode options
-// const options = {
-//     bottom: '64px', 
-//     right: '32px',
-//     time: '0.5s',
-//     mixColor: '#fff', 
-//     backgroundColor: '#000',
-//     buttonColorDark: '#100f2c',
-//     buttonColorLight: '#fff',
-//     saveInCookies: true,
-//     label: '🌓', 
-//     autoMatchOsTheme: true
-//   };
-  
-//   // Create the dark mode instance
-//   const darkmode = new Darkmode(options);
-//   darkmode.showWidget();
-  
-//   // Function to change text color based on the mode
-//   const updateHomeTextColor = () => {
-//     const homeElement = document.querySelector('.home');
-//     const boxElements = document.querySelectorAll('.box'); 
 
-//     if (darkmode.isActivated()) {
-//       homeElement.style.color = '#000000'; // Set text color to white for dark mode
-      
-//       boxElements.forEach(box => {
-//         box.style.backgroundColor = '#000000'; // Set box background to white for dark mode
-//         box.style.color = '#ffffff'; // Set box text color to black
-//       });
-//     } else {
-//       homeElement.style.color = '#ffff'; // Set text color to black for light mode
 
-//       boxElements.forEach(box => {
-//         box.style.backgroundColor = '#ffffff'; // Set box background to white for dark mode
-//         box.style.color = '#000000'; // Set box text color to black
-//       });
-//     }
-//   };
-  
-//   // Ensure correct theme is applied on page load
-//   window.onload = () => {
-//     updateHomeTextColor();
-//   };
-  
-//   // Listen for mode changes and update text color accordingly
-//   document.querySelector('.darkmode-toggle').addEventListener('click', () => {
-//     setTimeout(updateHomeTextColor, 500); // Small delay for transition
-//   });
-  
+// Initialize dark mode options 
 const options = {
   bottom: '64px', 
   right: '32px',
