@@ -894,6 +894,9 @@ form input,form textarea{
        
         /* width: 500%; */
     }
+    .footer{
+       font-size: 25px;
+    }
     .bktitle p:nth-child(odd){
         color: rgb(202, 194, 194);
         font-size: 60px;
