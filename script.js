@@ -84,39 +84,72 @@ function update(){
 update()
 
 // CONTACT POP UP
-var submitbtn=document.getElementById("submit-btn")
+// var submitbtn=document.getElementById("submit-btn")
 
-submitbtn.addEventListener("click",(e)=>{
-    e.preventDefault();
-    var form=document.getElementById("form")
-    var popmessage=document.getElementById("pop-message")
-    var Emessage=document.getElementById("email-message")
+// submitbtn.addEventListener("click",(e)=>{
+//     e.preventDefault();
+//     var form=document.getElementById("form")
+//     var popmessage=document.getElementById("pop-message")
+//     var Emessage=document.getElementById("email-message")
+
+//     var name = document.getElementById("name").value;
+//     var email = document.getElementById("email").value;
+//     var comment = document.getElementById("comment").value;
+
+//     var email_error=document.getElementById("email_error")
+
+//     const emailpattern=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+//     if(name==="" || email===""|| comment===""){
+//         popmessage.textContent="please fill out all fields"
+//         return
+//     }
+
+//     if(!emailpattern.test(email)){
+//         popmessage.textContent= "Please enter a valid email address"
+//         return;
+//     }
+
+//     form.reset();
+//     popmessage.textContent="Submitted successfully!"
+
+//     setTimeout(()=>{
+//         popmessage.textContent=" "
+//     },3000)
+// } )
+
+var submitbtn = document.getElementById("submit-btn");
+
+submitbtn.addEventListener("click", (e) => {
+    var form = document.getElementById("form");
+    var popmessage = document.getElementById("pop-message");
 
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var comment = document.getElementById("comment").value;
 
-    var email_error=document.getElementById("email_error")
+    const emailpattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
-    const emailpattern=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-    if(name==="" || email===""|| comment===""){
-        popmessage.textContent="please fill out all fields"
-        return
-    }
-
-    if(!emailpattern.test(email)){
-        popmessage.textContent= "Please enter a valid email address"
+    if (name === "" || email === "" || comment === "") {
+        popmessage.textContent = "Please fill out all fields";
+        e.preventDefault(); // Prevent form submission if validation fails
         return;
     }
 
-    form.reset();
-    popmessage.textContent="Submitted successfully!"
+    if (!emailpattern.test(email)) {
+        popmessage.textContent = "Please enter a valid email address";
+        e.preventDefault(); // Prevent form submission if email is invalid
+        return;
+    }
 
-    setTimeout(()=>{
-        popmessage.textContent=" "
-    },3000)
-} )
+    // Reset form only after successful submission
+    popmessage.textContent = "Submitted successfully!";
+    setTimeout(() => {
+        popmessage.textContent = "";
+    }, 3000);
+});
+
+
 
 
 // Scroll animation

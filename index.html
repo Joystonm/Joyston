@@ -296,7 +296,7 @@
                     </div>
                     <div class="contact-right">
                         <h1 class="heading">Contact Form</h1>
-                        <form id="form" name="Contact" action="post" data-netlify="true">
+                        <!-- <form id="form" name="Contact" action="post" data-netlify="true">
                             <input type="text" id="name" name="name" placeholder="Name" required>
 
                             <input type="email" id="email" name="email" placeholder="Email" required>
@@ -306,7 +306,19 @@
                             <div>
                                 <p class="pop-message" id="pop-message"></p>
                             </div>
+                        </form> -->
+
+                        <form id="form" name="contact" method="POST" data-netlify="true">
+                            <input type="text" id="name" name="name" placeholder="Name" required>
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                            <textarea name="message" id="comment" rows="3" placeholder="Message" required></textarea>
+                        
+                            <button class="btn-grad1" id="submit-btn" type="submit">Submit</button>
+                            <div>
+                                <p class="pop-message" id="pop-message"></p>
+                            </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>
