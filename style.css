@@ -773,7 +773,11 @@ form input,form textarea{
 
     }
 } 
-
+footer{
+    background-color: #fff;
+    padding-bottom: 0.1%;
+    background-size: cover;
+}
 .footer {
    text-align: center;
    border-top: 1px solid rgba(0,0,0,0.2);
