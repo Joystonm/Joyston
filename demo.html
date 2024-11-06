@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="waves">
+        <!-- First Wave -->
+        <svg width="100%" height="150px" fill="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#00B4DB" />
+                    <stop offset="50%" stop-color="#224488" />
+                    <stop offset="100%" stop-color="#0083B0" />
+                </linearGradient>
+            </defs>
+            <path 
+                fill="url(#grad1)" 
+                d="
+                  M0 67
+                  C 273,183
+                    822,-40
+                    1920.00,106 
+                  V 359 
+                  H 0 
+                  V 67
+                  Z">
+                <animate 
+                    repeatCount="indefinite" 
+                    attributeName="d" 
+                    dur="15s"
+                    values="
+                      M0 77 
+                      C 473,283
+                        822,-40
+                        1920,116 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z; 
+    
+                      M0 77 
+                      C 473,-40
+                        1222,283
+                        1920,136 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z; 
+    
+                      M0 77 
+                      C 973,260
+                        1722,-53
+                        1920,120 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z; 
+    
+                      M0 77 
+                      C 473,283
+                        822,-40
+                        1920,116 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z
+                    ">
+                </animate>
+            </path>
+        </svg>
+    
+        <!-- Second Wave -->
+        <svg width="100%" height="150px" fill="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#A0E4F1" />
+                    <stop offset="50%" stop-color="#336699" />
+                    <stop offset="100%" stop-color="#66AACC" />
+                </linearGradient>
+            </defs>
+            <path 
+                fill="url(#grad2)" 
+                opacity="0.7"
+                d="
+                  M0 77
+                  C 473,283
+                    822,-40
+                    1920,116 
+                  V 359 
+                  H 0 
+                  V 67 
+                  Z">
+                <animate 
+                    repeatCount="indefinite" 
+                    attributeName="d" 
+                    dur="18s"
+                    values="
+                      M0 67 
+                      C 373,203
+                        922,-50
+                        1920,126 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z; 
+    
+                      M0 77 
+                      C 573,-20
+                        1022,303
+                        1920,146 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z; 
+    
+                      M0 67 
+                      C 773,250
+                        1722,-23
+                        1920,130 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z; 
+    
+                      M0 67 
+                      C 373,203
+                        922,-50
+                        1920,126 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z
+                    ">
+                </animate>
+            </path>
+        </svg>
+    
+        <!-- Third Wave -->
+        <svg width="100%" height="150px" fill="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#C2E9FB" />
+                    <stop offset="50%" stop-color="#4C89A1" />
+                    <stop offset="100%" stop-color="#0099CC" />
+                </linearGradient>
+            </defs>
+            <path 
+                fill="url(#grad3)" 
+                opacity="0.5"
+                d="
+                  M0 87
+                  C 673,283
+                    1022,-50
+                    1920,126 
+                  V 359 
+                  H 0 
+                  V 67 
+                  Z">
+                <animate 
+                    repeatCount="indefinite" 
+                    attributeName="d" 
+                    dur="20s"
+                    values="
+                      M0 67 
+                      C 573,183
+                        922,-30
+                        1920,106 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z; 
+    
+                      M0 87 
+                      C 773,-40
+                        1322,283
+                        1920,136 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z; 
+    
+                      M0 67 
+                      C 973,260
+                        1722,-53
+                        1920,110 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z; 
+    
+                      M0 67 
+                      C 573,183
+                        922,-30
+                        1920,106 
+                      V 359 
+                      H 0 
+                      V 67 
+                      Z
+                    ">
+                </animate>
+            </path>
+        </svg>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <style>
+      .waves {
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        z-index: 99;
+      }
+    
+      svg {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        animation: move-left 4s infinite alternate;
+      }
+    
+      .spacer {
+        height: 100px;
+        width: 100%;
+      }
+    
+      @keyframes move-left {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(-25px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+    
+</body>
+</html>
